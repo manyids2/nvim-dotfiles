@@ -10,7 +10,7 @@ require'nvim-tree'.setup {
   auto_reload_on_write = true,
   open_on_tab          = false,
   hijack_cursor        = false,
-  update_cwd           = false,
+  update_cwd           = true,
   hijack_unnamed_buffer_when_opening = false,
   hijack_directories   = {
     enable = true,
@@ -63,7 +63,7 @@ require'nvim-tree'.setup {
   },
   actions = {
     change_dir = {
-      enable = true,
+      enable = false,
       global = false,
     },
     open_file = {

@@ -16,9 +16,13 @@ return require('packer').startup(
     use "svermeulen/vim-cutlass"
     require 'x.configs.cutlass'
 
+    use { 'sbdchd/neoformat' }
+
     -- autopairs
     use { "windwp/nvim-autopairs" }
     require('nvim-autopairs').setup()
+
+    use "godlygeek/tabular" -- Quickly align text by pattern
 
     -- comment
     use { 'numToStr/Comment.nvim' }
@@ -28,6 +32,9 @@ return require('packer').startup(
     use { "kyazdani42/nvim-web-devicons" }
     use { "kyazdani42/nvim-tree.lua" }
     require 'x.configs.nvimtree'
+
+    -- rsync
+    use { "kenn7/vim-arsync" }
 
     -- appearance
     use { "marko-cerovac/material.nvim" }
@@ -48,10 +55,15 @@ return require('packer').startup(
     -- use { "feline-nvim/feline.nvim" }
     -- require 'x.configs.feline'
 
+    use { "lukas-reineke/indent-blankline.nvim" }
+    require "x.configs.indentguides"
+
     -- dashboard
-    use { "goolord/alpha-nvim" }
-    require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+    -- use { "goolord/alpha-nvim" }
+    -- require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     use { "mhinz/vim-startify" }
+    vim.g.startify_change_to_dir = 0
+    vim.g.startify_change_to_vcs_root = 0
 
     -- telescope
     use { "junegunn/fzf", run = "./install --all" }
@@ -67,9 +79,21 @@ return require('packer').startup(
     require 'x.telescope.mappings'
     require 'x.telescope.setup'
 
+    -- markdown
+    use({ "iamcco/markdown-preview.nvim",
+      setup = function()
+        vim.g.mkdp_filetypes = { "markdown", "telekasten" }
+      end,
+      ft = { "markdown", "telekasten" },
+      run = function() vim.fn['mkdp#util#install']() end })
+
+    -- Marks
+    use { 'chentoast/marks.nvim' }
+    require "x.configs.marks"
+
     -- terminal
-    use { "akinsho/toggleterm.nvim" }
-    require 'x.configs.toggleterm'
+    -- use { "akinsho/toggleterm.nvim" }
+    -- require 'x.configs.toggleterm'
 
     -- cmp
     use { "hrsh7th/cmp-nvim-lsp" }
@@ -83,11 +107,15 @@ return require('packer').startup(
     use { "williamboman/nvim-lsp-installer" }
     use { "neovim/nvim-lspconfig" }
     use { "onsails/lspkind-nvim" }
+    use { 'simrat39/symbols-outline.nvim' }
+    require 'x.lsp.symbols'
+    require 'x.lsp.config'
     require 'x.lsp.setup'
     require 'x.cmp.setup'
 
     -- Tree sitter
     use { "nvim-treesitter/nvim-treesitter" }
+    require 'x.configs.treesitter'
 
     -- snippets
     use { "L3MON4D3/LuaSnip" }
@@ -98,20 +126,18 @@ return require('packer').startup(
     use { "Pocco81/TrueZen.nvim" }
     require 'x.configs.truezen'
 
-    -- navigator
-    use({
-      'ray-x/navigator.lua',
-      requires = {
-        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
-        { 'neovim/nvim-lspconfig' },
-      },
-    })
-    require 'x.lsp.navigator'
-
     -- telekasten
     use { "renerocksai/telekasten.nvim" }
     use { "renerocksai/calendar-vim" }
     require 'x.configs.telekasten'
+
+    -- Git
+    use "TimUntersberger/neogit"
+    use "lewis6991/gitsigns.nvim"
+    require('gitsigns').setup()
+
+    use { 'pwntester/octo.nvim' }
+    require "x.configs.octo"
 
   end
 )

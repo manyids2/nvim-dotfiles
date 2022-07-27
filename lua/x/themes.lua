@@ -16,4 +16,6 @@ vim.cmd([[set termguicolors]])
 
 -- vim.cmd [[colorscheme OceanicNext]]
 
-vim.cmd [[colorscheme OceanicNext]]
+vim.cmd [[colorscheme tokyonight]]
+
+-- vim.cmd [[colorscheme seoul256]]

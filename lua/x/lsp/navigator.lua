@@ -128,7 +128,19 @@ require 'navigator'.setup({
           },
         }
       }
-    }
+    },
+    pyright = { },
+    remark_ls = { },
+    sqlls = { },
+    bashls = { },
+    cssls = { },
+    emmet_ls = { },
+    svelte = { },
+    tailwindcss = {},
+    texlab = {},
+    verible = {},
+    vimls = {},
+    yamlls = {},
   }
 })
 

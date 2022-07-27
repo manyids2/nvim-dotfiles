@@ -1,5 +1,9 @@
 require("nvim-lsp-installer").setup {}
 
+vim.cmd [[highlight LspReferenceRead cterm=italic gui=italic]]
+vim.cmd [[highlight LspReferenceText cterm=italic gui=italic]]
+vim.cmd [[highlight LspReferenceWrite cterm=italic gui=italic]]
+
 local on_attach = function(_, bufnr)
   local function bufopt(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
@@ -10,7 +14,7 @@ local on_attach = function(_, bufnr)
   local _set = vim.api.nvim_buf_set_keymap
   local opts = { noremap = true, silent = true }
 
-  _set(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  _set(bufnr, 'n', '<C-space>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   _set(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   _set(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   _set(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -25,11 +29,12 @@ local on_attach = function(_, bufnr)
   _set(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   _set(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-  -- _set(bufnr, 'n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  -- _set(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  -- _set(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  -- _set(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  -- _set(bufnr, 'n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+  _set(bufnr, 'n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  _set(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  _set(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  _set(bufnr, 'n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  _set(bufnr, 'n', 'g0', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts)
+  _set(bufnr, 'n', 'gp', [[<cmd>lua require('x.lsp.preview').peek_definition()<CR>]], opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
