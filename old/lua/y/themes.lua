@@ -1,0 +1,5 @@
+vim.cmd([[set termguicolors]])
+vim.cmd([[set background=dark]])
+-- vim.cmd([[let g:everforest_background = 'soft']])
+-- vim.cmd([[let g:everforest_better_performance = 1]])
+vim.cmd([[colorscheme tokyonight-night]])
