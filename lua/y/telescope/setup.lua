@@ -168,6 +168,7 @@ require("telescope").setup({
 _ = require("telescope").load_extension("fzf")
 _ = require("telescope").load_extension("file_browser")
 _ = require("telescope").load_extension("ui-select")
+_ = require("telescope").load_extension("neoclip")
 -- _ = require("telescope").load_extension "smart_history"
 
 if vim.fn.executable("gh") == 1 then

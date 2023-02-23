@@ -124,15 +124,15 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
   },
+  ["easypick.nvim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/easypick.nvim",
+    url = "https://github.com/axkirillov/easypick.nvim"
+  },
   edge = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/edge",
     url = "https://github.com/sainnhe/edge"
-  },
-  ["fold-preview.nvim"] = {
-    loaded = true,
-    path = "/home/x/.local/share/nvim/site/pack/packer/start/fold-preview.nvim",
-    url = "https://github.com/anuvyklack/fold-preview.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -149,6 +149,16 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["hologram.nvim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/hologram.nvim",
+    url = "https://github.com/edluffy/hologram.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -163,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/journal-lsp",
     url = "/home/x/fd/code/journal-lsp"
-  },
-  ["keymap-amend.nvim"] = {
-    loaded = true,
-    path = "/home/x/.local/share/nvim/site/pack/packer/start/keymap-amend.nvim",
-    url = "https://github.com/anuvyklack/keymap-amend.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -194,6 +199,11 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
+  neogen = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/neogen",
+    url = "https://github.com/danymat/neogen"
+  },
   neogit = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/neogit",
@@ -203,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/neon",
     url = "https://github.com/rafamadriz/neon"
+  },
+  neorg = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/neorg",
+    url = "https://github.com/nvim-neorg/neorg"
   },
   ["nord.nvim"] = {
     loaded = true,
@@ -229,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-neoclip.lua"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
+  },
   ["nvim-notify"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/nvim-notify",
@@ -248,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -279,20 +304,35 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["pretty-fold.nvim"] = {
+  ["promise-async"] = {
     loaded = true,
-    path = "/home/x/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
-    url = "https://github.com/anuvyklack/pretty-fold.nvim"
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["seoul256.nvim"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/seoul256.nvim",
     url = "https://github.com/shaunsingh/seoul256.nvim"
   },
+  ["smart-splits.nvim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
+    url = "https://github.com/mrjones2014/smart-splits.nvim"
+  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/sqlite.lua",
-    url = "https://github.com/tami5/sqlite.lua"
+    url = "https://github.com/kkharji/sqlite.lua"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
+  },
+  tabular = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/tabular",
+    url = "https://github.com/godlygeek/tabular"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
@@ -334,10 +374,25 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["unicode.vim"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/unicode.vim",
+    url = "https://github.com/chrisbra/unicode.vim"
+  },
+  ["vim-arsync"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/vim-arsync",
+    url = "https://github.com/KenN7/vim-arsync"
+  },
   ["vim-cutlass"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/vim-cutlass",
     url = "https://github.com/svermeulen/vim-cutlass"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -353,6 +408,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
   },
   ["vim-visual-star-search"] = {
     loaded = true,

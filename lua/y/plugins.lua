@@ -6,6 +6,17 @@ return require("packer").startup(function()
 	use({ "nvim-lua/plenary.nvim" })
 	use({ "lewis6991/impatient.nvim" })
 
+	-- Tree sitter
+	use({ "nvim-treesitter/nvim-treesitter" })
+	use({ "nvim-treesitter/playground" })
+	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
+	require("configs.tsplayground")
+	require("configs.treesitter")
+
+	-- splits
+	use({ "mrjones2014/smart-splits.nvim" })
+	require("configs.smartsplits")
+
 	-- tpope
 	use("tpope/vim-repeat") -- Repeat actions better
 	use("tpope/vim-surround") -- Surround text objects easily
@@ -17,11 +28,10 @@ return require("packer").startup(function()
 	use({ "windwp/nvim-autopairs" })
 	require("nvim-autopairs").setup()
 
-	-- fold string
-	use({ "anuvyklack/pretty-fold.nvim" })
-	use({ "anuvyklack/fold-preview.nvim", requires = "anuvyklack/keymap-amend.nvim" })
-	require("fold-preview").setup()
-	require("configs.prettyfold")
+	-- formatting
+	use({ "godlygeek/tabular" })
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+	require("configs.ufo")
 
 	-- comment
 	use({ "numToStr/Comment.nvim" })
@@ -40,6 +50,7 @@ return require("packer").startup(function()
 	use({ "shaunsingh/nord.nvim" })
 	use({ "shaunsingh/seoul256.nvim" })
 	use({ "sainnhe/edge" })
+	require("configs.tokyonight")
 
 	-- fancy
 	use({ "rcarriga/nvim-notify" })
@@ -52,6 +63,13 @@ return require("packer").startup(function()
 	use({ "stevearc/dressing.nvim" })
 	require("configs.dressing")
 
+	use({ "edluffy/hologram.nvim" })
+	require("hologram").setup({
+		auto_display = true, -- WIP automatic markdown image display, may be prone to breaking
+	})
+
+	use({ "chrisbra/unicode.vim" })
+
 	-- tabline, bufferline
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
 	require("configs.bufferline")
@@ -61,15 +79,19 @@ return require("packer").startup(function()
 
 	-- indent
 	use({ "lukas-reineke/indent-blankline.nvim" })
-	-- require("configs.indentblankline")
+	require("configs.indentblankline")
 
 	-- dashboard
 	use({ "mhinz/vim-startify" })
 
+	-- clipboard
+	use({ "AckslD/nvim-neoclip.lua" })
+	require("configs.neoclip")
+
 	-- telescope
 	use({ "junegunn/fzf", run = "./install --all" })
 	use({ "junegunn/fzf.vim" })
-	use({ "tami5/sqlite.lua" })
+	use({ "kkharji/sqlite.lua" })
 
 	use({ "nvim-telescope/telescope.nvim" })
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
@@ -77,8 +99,10 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope-file-browser.nvim" })
 	use({ "nvim-telescope/telescope-ui-select.nvim" })
 	use({ "nvim-telescope/telescope-smart-history.nvim" })
+	use({ "axkirillov/easypick.nvim" })
 	require("y.telescope.mappings")
 	require("y.telescope.setup")
+	require("y.telescope.easypick")
 
 	-- terminal
 	use({ "akinsho/toggleterm.nvim" })
@@ -105,16 +129,16 @@ return require("packer").startup(function()
 	require("configs.mason")
 	require("configs.lsp")
 
+	use({ "danymat/neogen" })
+	require("configs.neogen")
+
+	-- lsp-symbols
+	use("simrat39/symbols-outline.nvim")
+	require("configs.symbolsoutline")
+
 	-- formatting
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	require("configs.nullls")
-
-	-- Tree sitter
-	use({ "nvim-treesitter/nvim-treesitter" })
-	use({ "nvim-treesitter/playground" })
-	use({ "nvim-treesitter/nvim-treesitter-textobjects" })
-	require("configs.treesitter")
-	require("configs.tsplayground")
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" })
@@ -125,14 +149,29 @@ return require("packer").startup(function()
 	use({ "Pocco81/TrueZen.nvim" })
 	require("configs.truezen")
 
+	-- rsync
+	use({ "KenN7/vim-arsync" })
+
 	-- git
 	use({ "TimUntersberger/neogit" })
 	require("configs.neogit")
+
 	use({ "pwntester/octo.nvim" })
 	require("configs.octo")
 
-  -- diary
+	use({ "tpope/vim-fugitive" })
+	use({ "tpope/vim-unimpaired" })
+	use({ "lewis6991/gitsigns.nvim" })
+	require("configs.gitsigns")
+
+	-- neorg
+	use({
+		"nvim-neorg/neorg",
+		run = ":Neorg sync-parsers", -- This is the important bit!
+	})
+	require("configs.neorg")
+
+	-- diary
 	use("~/fd/code/journal-lsp")
 	require("journal-lsp").setup()
-
 end)

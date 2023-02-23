@@ -32,7 +32,8 @@ require("bufferline").setup({
 		diagnostics_update_in_insert = false,
 		-- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
 		diagnostics_indicator = function(count, _, _, _)
-			return "(" .. count .. ")"
+			-- return "(" .. count .. ")"
+			return ""
 		end,
 		-- offsets = {{filetype = "NvimTree", text = "File Explorer" | function , text_align = "left" | "center" | "right"}},
 		color_icons = true, -- whether or not to add the filetype icon highlights

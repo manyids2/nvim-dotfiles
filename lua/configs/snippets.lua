@@ -1,3 +1,4 @@
-require("luasnip.loaders.from_vscode").load({ include = { "python" } }) -- Load only python snippets
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/home/x/code/ixi-snips" } })
+-- require("luasnip").log.set_loglevel("debug")
+require("luasnip").setup({ history = false })
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load({ paths = { "/home/x/code/python-snippets" } })

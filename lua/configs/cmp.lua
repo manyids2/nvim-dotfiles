@@ -55,8 +55,8 @@ cmp.setup({
 	},
 
 	mapping = cmp.mapping.preset.insert({
-		["<Tab>"] = cmp.mapping(tab, { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(shift_tab, { "i", "s" }),
+		["<C-l>"] = cmp.mapping(tab, { "i", "s" }),
+		["<C-h>"] = cmp.mapping(shift_tab, { "i", "s" }),
 		["<C-j>"] = cmp.mapping.scroll_docs(-4),
 		["<C-k>"] = cmp.mapping.scroll_docs(4),
 		["<C-y>"] = cmp.mapping.complete(),
@@ -65,12 +65,12 @@ cmp.setup({
 	}),
 
 	sources = cmp.config.sources({
-		{ name = "buffer", keyword_length = 3 },
-		{ name = "luasnip", keyword_length = 3 },
-		{ name = "path", keyword_length = 3 },
-		{ name = "nvim_lsp", keyword_length = 3 },
-		{ name = "nvim_lsp_signature_help", keyword_length = 3 },
-		{ name = "nvim_lua", keyword_length = 3 },
+		{ name = "buffer", keyword_length = 1 },
+		{ name = "luasnip", keyword_length = 2 },
+		{ name = "path", keyword_length = 2 },
+		{ name = "nvim_lsp", keyword_length = 1 },
+		{ name = "nvim_lsp_signature_help", keyword_length = 1 },
+		{ name = "nvim_lua", keyword_length = 1 },
 	}),
 
 	experimental = {

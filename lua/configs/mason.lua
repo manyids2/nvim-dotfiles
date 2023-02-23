@@ -38,7 +38,7 @@ local DEFAULT_SETTINGS = {
 
 require("mason").setup(DEFAULT_SETTINGS)
 require("mason-lspconfig").setup({
-	ensure_installed = { "sumneko_lua" },
+	ensure_installed = { "lua_ls" },
 })
 
 -- After setting up mason-lspconfig you may set up servers via lspconfig

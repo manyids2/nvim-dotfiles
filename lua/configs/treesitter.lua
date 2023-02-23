@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"
-	ensure_installed = {},
+	ensure_installed = { "python", "bash" },
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
@@ -17,32 +17,26 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 	},
 
-	incremental_selection = {
+	rainbow = {
 		enable = true,
-		keymaps = {
-			init_selection = "gnn",
-			node_incremental = "grn",
-			scope_incremental = "grc",
-			node_decremental = "grm",
+		extended_mode = false,
+		max_file_lines = nil,
+	},
+
+	textobjects = {
+		select = {
+			enable = true,
+
+			-- Automatically jump forward to textobj, similar to targets.vim
+			lookahead = true,
+
+			keymaps = {
+				-- You can use the capture groups defined in textobjects.scm
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+			},
 		},
 	},
 })
-
--- require("nvim-treesitter.configs").setup({
--- 	textobjects = {
--- 		select = {
--- 			enable = true,
---
--- 			-- Automatically jump forward to textobj, similar to targets.vim
--- 			lookahead = true,
---
--- 			keymaps = {
--- 				-- You can use the capture groups defined in textobjects.scm
--- 				["af"] = "@function.outer",
--- 				["if"] = "@function.inner",
--- 				["ac"] = "@class.outer",
--- 				["ic"] = "@class.inner",
--- 			},
--- 		},
--- 	},
--- })
