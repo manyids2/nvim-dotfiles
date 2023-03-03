@@ -219,6 +219,11 @@ _G.packer_plugins = {
     path = "/home/x/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
   },
+  ["neorg-telescope"] = {
+    loaded = true,
+    path = "/home/x/.local/share/nvim/site/pack/packer/start/neorg-telescope",
+    url = "https://github.com/nvim-neorg/neorg-telescope"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/home/x/.local/share/nvim/site/pack/packer/start/nord.nvim",

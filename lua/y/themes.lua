@@ -14,6 +14,6 @@ vim.cmd([[set termguicolors]])
 -- vim.g.seoul256_disable_background = false
 -- vim.g.seoul256_hl_current_line = true
 
--- vim.cmd [[colorscheme OceanicNext]]
+vim.cmd([[colorscheme OceanicNext]])
 
-vim.cmd([[colorscheme tokyonight-storm]])
+-- vim.cmd([[colorscheme tokyonight-storm]])

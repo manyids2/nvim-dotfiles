@@ -44,3 +44,9 @@ _set("n", "<leader><C-l>", ":SLoad ", { noremap = true, silent = false })
 
 -- format
 _set("n", "<C-e>", ":lua vim.lsp.buf.format()<CR>", opts)
+_set("n", "<C-m>", ':call mkdir(expand("%:p:h"), "p")<CR>', opts)
+
+-- neorg
+_set("n", "<leader>nn", ":Neorg workspace notes<CR>", opts)
+_set("n", "<leader>nr", ":Neorg return<CR>", opts)
+_set("n", "<leader>nt", ":Neorg toggle-concealer<CR>", opts)

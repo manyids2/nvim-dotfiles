@@ -168,6 +168,7 @@ return require("packer").startup(function()
 	use({
 		"nvim-neorg/neorg",
 		run = ":Neorg sync-parsers", -- This is the important bit!
+		requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope" },
 	})
 	require("configs.neorg")
 

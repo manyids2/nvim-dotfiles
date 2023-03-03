@@ -48,6 +48,7 @@ opt.breakindent = true
 opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
 
+opt.conceallevel = 2
 opt.foldmethod = "expr"
 opt.foldlevel = 3
 opt.modelines = 1
